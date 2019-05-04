@@ -43,7 +43,8 @@ int main( int argc, char *argv[])
          strncpy( cmdi , "  " , PATH_MAX );
          strncat( cmdi , " gnuplot -p -e " , PATH_MAX - strlen( cmdi ) -1 );
          strncat( cmdi , " \"" , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi , " plot '" , PATH_MAX - strlen( cmdi ) -1 );
+         strncat( cmdi , "  set datafile separator ';' ;  plot '" , PATH_MAX - strlen( cmdi ) -1 );
+         //strncat( cmdi , " plot '" , PATH_MAX - strlen( cmdi ) -1 );
          strncat( cmdi , argv[ i ] , PATH_MAX - strlen( cmdi ) -1 );
          strncat( cmdi , "'  using 1:2 with points lt 1 pt 1 " , PATH_MAX - strlen( cmdi ) -1 );
          strncat( cmdi , "\"  " , PATH_MAX - strlen( cmdi ) -1 );
